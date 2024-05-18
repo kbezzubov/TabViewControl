@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TabViewControl.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:TabViewControl.Views.Controls"
+    xmlns:templates="clr-namespace:TabViewControl.Views.Templates">
+    <ContentPage.Resources>
+        <ResourceDictionary />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="Not Tapped" />
+            <controls:TabViewControl
+                x:Name="TabView"
+                Grid.Row="1"
+                Padding="0,0,0,0"
+                Style="{StaticResource TopTabViewStyle}"
+                TabStripHeight="56"
+                VerticalOptions="Fill">
+                <controls:TabViewControl.TabItems>
+                    <x:Array Type="{x:Type controls:TabViewControlItem}">
+                        <controls:TabViewControlItem
+                            Margin="16,0,0,0"
+                            IsFirst="True"
+                            IsSelected="True"
+                            TabTitle="Tab 1 title">
+                            <controls:TabViewControlItem.Content>
+                                <Grid Margin="1,1,1,1" RowDefinitions="*">
+                                    <Label
+                                        HorizontalOptions="Center"
+                                        Text="Tab 1 Content"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </controls:TabViewControlItem.Content>
+                        </controls:TabViewControlItem>
+                        <controls:TabViewControlItem Margin="0,0,0,0" TabTitle="Tab 2 title">
+                            <controls:TabViewControlItem.Content>
+                                <Grid Margin="1,1,1,1" RowDefinitions="*">
+                                    <Label
+                                        HorizontalOptions="Center"
+                                        Text="Tab 2 Content"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </controls:TabViewControlItem.Content>
+                        </controls:TabViewControlItem>
+                        <controls:TabViewControlItem Margin="0,0,0,0" TabTitle="Tab 3 title">
+                            <controls:TabViewControlItem.Content>
+                                <Grid Margin="1,1,1,1" RowDefinitions="*">
+                                    <Label
+                                        HorizontalOptions="Center"
+                                        Text="Tab 3 Content"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </controls:TabViewControlItem.Content>
+                        </controls:TabViewControlItem>
+                        <controls:TabViewControlItem Margin="0,0,0,0" TabTitle="Tab 4 title">
+                            <controls:TabViewControlItem.Content>
+                                <Grid Margin="1,1,1,1" RowDefinitions="*">
+                                    <Label
+                                        HorizontalOptions="Center"
+                                        Text="Tab 4 Content"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </controls:TabViewControlItem.Content>
+                        </controls:TabViewControlItem>
+                        <controls:TabViewControlItem Margin="0,0,0,0" TabTitle="Tab 5 title">
+                            <controls:TabViewControlItem.Content>
+                                <Grid Margin="1,1,1,1" RowDefinitions="*">
+                                    <Label
+                                        HorizontalOptions="Center"
+                                        Text="Tab 5 Content"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </controls:TabViewControlItem.Content>
+                        </controls:TabViewControlItem>
+                        <controls:TabViewControlItem Margin="0,0,0,0" TabTitle="Tab 6 title">
+                            <controls:TabViewControlItem.Content>
+                                <Grid Margin="1,1,1,1" RowDefinitions="*">
+                                    <Label
+                                        HorizontalOptions="Center"
+                                        Text="Tab 6 Content"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </controls:TabViewControlItem.Content>
+                        </controls:TabViewControlItem>
+                        <controls:TabViewControlItem Margin="0,0,0,0" TabTitle="Tab 7 title">
+                            <controls:TabViewControlItem.Content>
+                                <Grid Margin="1,1,1,1" RowDefinitions="*">
+                                    <Label
+                                        HorizontalOptions="Center"
+                                        Text="Tab 7 Content"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </controls:TabViewControlItem.Content>
+                        </controls:TabViewControlItem>
+                        <controls:TabViewControlItem
+                            Margin="0,0,16,0"
+                            IsLast="true"
+                            TabTitle="Tab 8 title">
+                            <controls:TabViewControlItem.Content>
+                                <Grid Margin="1,1,1,1" RowDefinitions="*">
+                                    <Label
+                                        HorizontalOptions="Center"
+                                        Text="Tab 8 Content"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </controls:TabViewControlItem.Content>
+                        </controls:TabViewControlItem>
+                    </x:Array>
+                </controls:TabViewControl.TabItems>
+            </controls:TabViewControl>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

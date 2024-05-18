@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="TabViewControl.Resources.GlobalResources"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:TabViewControl.Views.Controls"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:templates="clr-namespace:TabViewControl.Views.Templates"
+    xmlns:xct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    mc:Ignorable="d">
+    <!--  Colors  -->
+    <Color x:Key="DefaultTextColor">#4E6674</Color>
+    <Color x:Key="PageBackgroundColor">#F7F8FB</Color>
+    <Color x:Key="InactiveBackgroundColor">#44000000</Color>
+    <Color x:Key="DataBackgroundColor">#ECEEF4</Color>
+    <Color x:Key="SeparatorColor">#DCE3EA</Color>
+    <Color x:Key="ActiveButtonBackgroundColor">#A6993C</Color>
+    <!--<Color x:Key="InactiveButtonBackgroundColor">#7C888F</Color>-->
+    <Color x:Key="LabelAsButtonTapColor">#F7F8FB</Color>
+    <Color x:Key="ActiveButtonTextColor">#FFFFFF</Color>
+    <Color x:Key="ErrorTextLabelColor">#DE6D6D</Color>
+    <Color x:Key="SmsCodeCorrectLabelColor">#2D7CDE</Color>
+    <Color x:Key="SmsCodeIncorrectLabelColor">#DE6D6D</Color>
+    <Color x:Key="DisabledActiveButtonBackgroundColor">#7C888F</Color>
+    <Color x:Key="DisabledActiveButtonTextColor">#2D7CDE</Color>
+    <Color x:Key="EmptyPinCodeBoxViewColor">#c4ccd2</Color>
+    <Color x:Key="CaptionButtonBackgroundColor">#c4ccd2</Color>
+    <Color x:Key="FilledPinCodeBoxViewColor">#4E6674</Color>
+    <Color x:Key="NavigationBarBackroundColor">#FFFFFF</Color>
+    <Color x:Key="TabbarSelectedColor">#A6993C</Color>
+    <Color x:Key="TabbarUndelectedColor">#7C888F</Color>
+    <Color x:Key="ChatDateAsSeparatorColor">#7C888F</Color>
+    <Color x:Key="TextLighterThenDefault">#7C888F</Color>
+    <Color x:Key="ChatMessageTimeColor">#c4ccd2</Color>
+    <Color x:Key="ChatDateAsSeparatorFrameColor">#ECEEF4</Color>
+    <Color x:Key="ChatIncomingMessagesBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="ChatOutgoingMessagesBackgroundColor">#DFDCC2</Color>
+    <Color x:Key="ClientsListSeparatorColor">#c4ccd2</Color>
+    <Color x:Key="PortfolioChangesFrameBorderColor">#dcccb4</Color>
+    <Color x:Key="PortfolioChagesUpColor">#456935</Color>
+    <Color x:Key="PortfolioChangesDownColor">#DE6D6D</Color>
+    <Color x:Key="StockChartColor">#466935</Color>
+    <Color x:Key="BondChartColor">#AEC232</Color>
+    <Color x:Key="MoneyChartColor">#EAB76C</Color>
+    <Color x:Key="DerivativeChartColor">#D28715</Color>
+    <Color x:Key="OtherChartColor">#963838</Color>
+    <Color x:Key="Linetime1Color">#466935</Color>
+    <Color x:Key="Linetime2Color">#AEC232</Color>
+    <Color x:Key="Linetime1BGColor">#55466935</Color>
+    <Color x:Key="Linetime2BGColor">#55AEC232</Color>
+    <Color x:Key="Linetime1TextColor">#466935</Color>
+    <Color x:Key="Linetime2TextColor">#AEC232</Color>
+    <Color x:Key="StockChartLegendBackgroundColor">#EFF5E9</Color>
+    <Color x:Key="BondChartLegendBackgroundColor">#E7F1DF</Color>
+    <Color x:Key="MoneyChartLegendBackgroundColor">#FFF3E1</Color>
+    <Color x:Key="DerivativeChartLegendBackgroundColor">#FFF1DB</Color>
+    <Color x:Key="OtherChartLegendBackgroundColor">#FFE4E4</Color>
+    <Color x:Key="InactiveLegendBackgroundColor">#DDDDDD</Color>
+    <Color x:Key="InactiveChartColor">#999999</Color>
+    <Color x:Key="LessThen1Color">#466935</Color>
+    <Color x:Key="From1To3Color">#AEC232</Color>
+    <Color x:Key="From3To5Color">#6CB7EA</Color>
+    <Color x:Key="From5To10Color">#D28715</Color>
+    <Color x:Key="From10To20Color">#AE32C2</Color>
+    <Color x:Key="GreaterThen20Color">#4547FF</Color>
+    <Color x:Key="LessThen1BackgroundColor">#22466935</Color>
+    <Color x:Key="From1To3BackgroundColor">#22AEC232</Color>
+    <Color x:Key="From3To5BackgroundColor">#226CB7EA</Color>
+    <Color x:Key="From5To10BackgroundColor">#22D28715</Color>
+    <Color x:Key="From10To20BackgroundColor">#22AE32C2</Color>
+    <Color x:Key="GreaterThen20BackgroundColor">#224547FF</Color>
+    <!--  Styles  -->
+    <!--  -Глобавльный стиль для CollectionView  -->
+    <Style TargetType="CollectionView">
+        <Setter Property="VerticalScrollBarVisibility" Value="Never" />
+    </Style>
+    <!--  Стиль большого заголовка  -->
+
+    <Style x:Key="LargeHeaderStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+    <Style x:Key="DefaultLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+    <Style x:Key="DefaultCaptionStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{DynamicResource ChatDateAsSeparatorColor}" />
+    </Style>
+    <Style x:Key="FieldTitleLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+    <Style x:Key="PnoneNumberPrefixLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+    </Style>
+    <Style x:Key="DefaultEntryStyle" TargetType="Entry">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="Margin" Value="14, 0, 14, 0" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="DefaultEditorStyle" TargetType="Editor">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="Margin" Value="14, 2, 14, 0" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="VerticalSeparatorStyle" TargetType="BoxView">
+        <Setter Property="WidthRequest" Value="1" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="Color" Value="{DynamicResource SeparatorColor}" />
+    </Style>
+    <Style x:Key="DefaultFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{DynamicResource DataBackgroundColor}" />
+        <Setter Property="CornerRadius" Value="11" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="HasShadow" Value="False" />
+    </Style>
+    <!--  Стиль активной цветной кнопки  -->
+    <Style x:Key="ActiveButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonTextColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HeightRequest" Value="48" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="CornerRadius" Value="11" />
+    </Style>
+    <Style
+        x:Key="InactiveButtonStyle"
+        BasedOn="{StaticResource ActiveButtonStyle}"
+        TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+    </Style>
+    <Style
+        x:Key="SecondButtonStyle"
+        BasedOn="{StaticResource ActiveButtonStyle}"
+        TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="BorderColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+    </Style>
+    <Style x:Key="ActiveSmallButtonStyle" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonTextColor}" />
+        <Setter Property="Padding" Value="8, 3, 8, 3" />
+        <Setter Property="CornerRadius" Value="32" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HeightRequest" Value="32" />
+    </Style>
+    <Style
+        x:Key="InactiveSmallButtonStyle"
+        BasedOn="{StaticResource ActiveSmallButtonStyle}"
+        TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="BorderColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="BorderWidth" Value="1" />
+    </Style>
+    <Style x:Key="LabelAsButtonStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="TextDecorations" Value="Underline" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="TransparentButtonStyle" TargetType="Button">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HeightRequest" Value="25" />
+        <Setter Property="Padding" Value="0,0,0,0" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+    </Style>
+    <Style
+        x:Key="DisabledActiveButtonStyle"
+        BasedOn="{StaticResource ActiveButtonStyle}"
+        TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource DisabledActiveButtonBackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+    </Style>
+    <Style
+        x:Key="DisabledLabelAsButtonStyle"
+        BasedOn="{StaticResource LabelAsButtonStyle}"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource DisabledActiveButtonBackgroundColor}" />
+    </Style>
+    <!--  Стиль надписи об ошибке валидации  -->
+    <Style x:Key="ErrorLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="TextColor" Value="{DynamicResource ErrorTextLabelColor}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+    </Style>
+    <Style x:Key="SmsCodeLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HeightRequest" Value="20" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="PinCodeBoxViewStyle" TargetType="BoxView">
+        <Setter Property="WidthRequest" Value="16" />
+        <Setter Property="HeightRequest" Value="16" />
+        <Setter Property="CornerRadius" Value="8" />
+    </Style>
+    <Style x:Key="NavbarTitle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <!--  -Стили для чата  -->
+    <Style x:Key="DateAsSeparatorFrameStyle" TargetType="Frame">
+        <Setter Property="Margin" Value="0, 10, 0, 10" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource ChatDateAsSeparatorFrameColor}" />
+        <Setter Property="Padding" Value="10, 5, 10, 5" />
+        <Setter Property="CornerRadius" Value="12" />
+    </Style>
+    <Style x:Key="DateAsSeparatorTabControlStyle" TargetType="controls:TopTabItemControl">
+        <Setter Property="Margin" Value="0, 10, 0, 10" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="SelectedBackgroundColor" Value="{DynamicResource ChatDateAsSeparatorFrameColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="IsSelected" Value="true" />
+        <Setter Property="Padding" Value="10, 5, 10, 5" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="HeightRequest" Value="24" />
+    </Style>
+    <Style x:Key="DateAsSeparatorStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="{DynamicResource ChatDateAsSeparatorColor}" />
+    </Style>
+
+    <Style x:Key="MessageTimeLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="TextColor" Value="{DynamicResource ChatDateAsSeparatorColor}" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="End" />
+    </Style>
+    <Style x:Key="MessageSenderStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Padding" Value="8, 0, 12, 0" />
+        <!--<Setter Property="Margin" Value="0, 4, 0, 0" />-->
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="End" />
+    </Style>
+    <Style
+        x:Key="ClientItemMessageSenderStyle"
+        BasedOn="{StaticResource MessageSenderStyle}"
+        TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+    <!--  SPAN  -->
+    <Style x:Key="ClientItemMessageSenderSpanStyle" TargetType="Span">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+    <Style x:Key="MessageTextStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="LineHeight" Value="1.1" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="AnswerMessageSenderStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Padding" Value="0, 0, 0, 0" />
+        <Setter Property="Margin" Value="0, 0, 0, 0" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="End" />
+    </Style>
+    <Style x:Key="AnswerMessageTextStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="ChatEditorStyle" TargetType="Editor">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="Margin" Value="16, 2, 16, 2" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="ChatPrimaryButton" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="CornerRadius" Value="18" />
+        <Setter Property="HeightRequest" Value="36" />
+        <Setter Property="WidthRequest" Value="36" />
+    </Style>
+    <Style x:Key="ChatSecondaryButton" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonTextColor}" />
+        <Setter Property="Padding" Value="8, 3, 8, 3" />
+        <Setter Property="CornerRadius" Value="15" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HeightRequest" Value="30" />
+    </Style>
+    <Style x:Key="AnswerLeftBoxViewStyle" TargetType="BoxView">
+        <Setter Property="Color" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="WidthRequest" Value="4" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+    <Style x:Key="ChatCloseAnswerButton" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="HeightRequest" Value="20" />
+        <Setter Property="WidthRequest" Value="20" />
+        <Setter Property="CornerRadius" Value="20" />
+    </Style>
+    <Style x:Key="EmptyListsTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource ChatDateAsSeparatorColor}" />
+    </Style>
+    <Style x:Key="RefreshViewStyle" TargetType="RefreshView">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+        <Setter Property="RefreshColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+    </Style>
+    <Style x:Key="ActivityIndicatorLoadingStyle" TargetType="ActivityIndicator">
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="Color" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="HeightRequest" Value="0" />
+        <Setter Property="IsRunning" Value="False" />
+        <Setter Property="IsVisible" Value="False" />
+        <Style.Triggers />
+    </Style>
+    <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="Color" Value="{DynamicResource DefaultTextColor}" />
+        <Style.Triggers />
+    </Style>
+    <Style x:Key="RadioButtonStyle" TargetType="RadioButton">
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="AmountCaptionButtonStyle" TargetType="Button">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="WidthRequest" Value="48" />
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonTextColor}" />
+    </Style>
+    <Style
+        x:Key="CurrencyCaptionButtonStyle"
+        BasedOn="{StaticResource AmountCaptionButtonStyle}"
+        TargetType="Button">
+        <Setter Property="WidthRequest" Value="102" />
+    </Style>
+    <!--  Стили списка клиентов  -->
+    <Style x:Key="ClientsCollectionSeparator" TargetType="BoxView">
+        <Setter Property="HeightRequest" Value="1" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Margin" Value="0, 0, 0, 0" />
+        <Setter Property="Color" Value="{DynamicResource DataBackgroundColor}" />
+    </Style>
+    <Style x:Key="ClientGrid" TargetType="Grid">
+        <Setter Property="Padding" Value="10, 16, 10, 16" />
+        <Setter Property="RowSpacing" Value="7" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+    </Style>
+    <Style x:Key="ClientFIOLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontFamily" Value="UbuntuBold" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="ClientMessageLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuReqular" />
+        <Setter Property="Opacity" Value="0.8" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="VerticalOptions" Value="End" />
+    </Style>
+    <!--  SPAN  -->
+    <Style x:Key="ClientMessageLabelSpanStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuReqular" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="ClientMessageDateTimeLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontFamily" Value="UbuntuReqular" />
+        <Setter Property="TextColor" Value="{DynamicResource ChatDateAsSeparatorColor}" />
+        <Setter Property="HorizontalTextAlignment" Value="End" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="ClientNewMessagesNumberLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontFamily" Value="UbuntuReqular" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonTextColor}" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+    </Style>
+    <Style x:Key="ClientNewMessagesNumberFrame" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="CornerRadius" Value="11" />
+        <Setter Property="WidthRequest" Value="22" />
+        <Setter Property="HeightRequest" Value="22" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+    <!--  Заголовок с данными по портфелю  -->
+    <Style x:Key="PortfolioHeaderStackLayoutStyle" TargetType="StackLayout">
+        <Setter Property="Padding" Value="18,0,18,8" />
+        <Setter Property="Spacing" Value="8" />
+    </Style>
+    <Style x:Key="PortfolioNotFoundLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="UbuntuBold" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+    </Style>
+    <Style x:Key="PortfolioHeaderFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="CornerRadius" Value="14" />
+        <Setter Property="HeightRequest" Value="28" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="8, 0, 8, 2" />
+        <Setter Property="BorderColor" Value="{DynamicResource PortfolioChangesFrameBorderColor}" />
+    </Style>
+    <Style x:Key="PortfolioHeaderFirstLineStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="UbuntuReqular" />
+        <Setter Property="TextColor" Value="{DynamicResource TextLighterThenDefault}" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+    </Style>
+    <Style x:Key="PortfolioHeaderSecondLineStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontFamily" Value="UbuntuBold" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+    </Style>
+    <Style x:Key="PortfolioNAVLegendStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+    </Style>
+    <Style x:Key="PortfolioHeaderThirdLineBaseStyle" TargetType="Span">
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+    <Style
+        x:Key="PortfolioHeaderThirdLineRegularStyle"
+        BasedOn="{StaticResource PortfolioHeaderThirdLineBaseStyle}"
+        TargetType="Span">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+    </Style>
+    <Style
+        x:Key="PortfolioHeaderThirdLineBoldStyle"
+        BasedOn="{StaticResource PortfolioHeaderThirdLineBaseStyle}"
+        TargetType="Span">
+        <Setter Property="FontFamily" Value="UbuntuBold" />
+    </Style>
+    <Style x:Key="PortfolioHeaderThirdLineLabelBaseStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="3,0,3,0" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+    <Style
+        x:Key="PortfolioHeaderThirdLineLabelRegularStyle"
+        BasedOn="{StaticResource PortfolioHeaderThirdLineLabelBaseStyle}"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+    </Style>
+    <Style
+        x:Key="PortfolioHeaderThirdLineLabelBoldStyle"
+        BasedOn="{StaticResource PortfolioHeaderThirdLineLabelBaseStyle}"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuBold" />
+    </Style>
+    <!--  Ресурсы для верхних табов  -->
+    <Style x:Key="TopTabBaseBoxViewStyle" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="{DynamicResource DataBackgroundColor}" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="CornerRadius" Value="19" />
+    </Style>
+    <Style x:Key="TopTabBaseFrameStyle" TargetType="controls:TopTabItemControl">
+        <Setter Property="CornerRadius" Value="19" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource DataBackgroundColor}" />
+        <Setter Property="SelectedBackgroundColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <!--<Style
+        x:Key="TopTabSelectedFrameStyle"
+        BasedOn="{StaticResource TopTabBaseFrameStyle}"
+        TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style
+        x:Key="TopTabUnSelectedFrameStyle"
+        BasedOn="{StaticResource TopTabBaseFrameStyle}"
+        TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>-->
+    <Style x:Key="TopTabBaseLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="8, 3, 8, 3" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+    </Style>
+    <Style
+        x:Key="TopTabSelectedLabelStyle"
+        BasedOn="{StaticResource TopTabBaseLabelStyle}"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonTextColor}" />
+    </Style>
+    <Style
+        x:Key="TopTabUnSelectedLabelStyle"
+        BasedOn="{StaticResource TopTabBaseLabelStyle}"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <!--  Diagram styles  -->
+    <Style x:Key="DiagramTitleStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="FontFamily" Value="UbuntuBold" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+    </Style>
+    <Style x:Key="DiagramDetailsStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="TextColor" Value="{DynamicResource PortfolioChagesUpColor}" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+    </Style>
+    <Style x:Key="DiagramHeaderTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="FilterFrameStyle" TargetType="Frame">
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="10, 0, 10, 0" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource DataBackgroundColor}" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+    <Style x:Key="FilterNControlStyle" TargetType="controls:TopTabItemControl">
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="10, 0, 10, 0" />
+        <Setter Property="IsSelected" Value="True" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="SelectedBackgroundColor" Value="{DynamicResource DataBackgroundColor}" />
+    </Style>
+    <Style x:Key="FilterDateFrameStyle" TargetType="Frame">
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="HeightRequest" Value="24" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="10, 0, 10, 0" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource DataBackgroundColor}" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+    <Style x:Key="FilterLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+        <Setter Property="Margin" Value="1,0" />
+    </Style>
+    <Style x:Key="FilterDatePickerStyle" TargetType="DatePicker">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="UpdatesDatesLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="9" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="{DynamicResource TextLighterThenDefault}" />
+        <Setter Property="Padding" Value="0,0,0,0" />
+    </Style>
+    <Style x:Key="DocumentNameLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="UbuntuMedium" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="DocumentStateLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="StartAndExpand" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="DocumentDateLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="StartAndExpand" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="TextColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+    </Style>
+    <Style x:Key="SettingsItemLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="SettingsItemCommentLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{DynamicResource TextLighterThenDefault}" />
+    </Style>
+    <Style x:Key="SwitchStyle" TargetType="Switch">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="On">
+                        <VisualState.Setters>
+                            <Setter Property="ThumbColor" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Off">
+                        <VisualState.Setters>
+                            <Setter Property="ThumbColor" Value="{DynamicResource EmptyPinCodeBoxViewColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="OnColor" Value="{DynamicResource EmptyPinCodeBoxViewColor}" />
+    </Style>
+
+    <!--  orders creatio  -->
+    <Style x:Key="OrderCreationGridStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="Padding" Value="16,16,16,16" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource ActiveButtonTextColor}" />
+        <Setter Property="RowSpacing" Value="16" />
+        <Setter Property="ColumnSpacing" Value="16" />
+    </Style>
+    <Style x:Key="OrderCreationTopTabControlStyle" TargetType="controls:TopTabItemControl">
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="HeightRequest" Value="38" />
+    </Style>
+    <Style x:Key="OrderCreationCaptionLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="OrderCreationBaseLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+    <Style
+        x:Key="OrderCreationLabelStyle"
+        BasedOn="{StaticResource OrderCreationBaseLabelStyle}"
+        TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="ChatOrderCaptionStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="{DynamicResource ChatDateAsSeparatorColor}" />
+    </Style>
+    <Style x:Key="ChatOutgoingOrderSeparator" TargetType="BoxView">
+        <Setter Property="HeightRequest" Value="1" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Margin" Value="0, 0, 0, 0" />
+        <Setter Property="Color" Value="{DynamicResource ActiveButtonBackgroundColor}" />
+    </Style>
+    <Style x:Key="InstrumentNameLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="InstrumentInfoLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="OrderItemFirstLineStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="OrderItemSeconsLineStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="CloseButtonLegendStyle" TargetType="ImageButton">
+        <Setter Property="CornerRadius" Value="16" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource InactiveLegendBackgroundColor}" />
+    </Style>
+    <Style x:Key="InstrumentHeaderStackLayoutStyle" TargetType="StackLayout">
+        <Setter Property="Padding" Value="18,0,18,8" />
+        <Setter Property="Spacing" Value="8" />
+    </Style>
+    <Style x:Key="TopTabViewStyle" TargetType="controls:TabViewControl">
+        <Setter Property="TabStripBackgroundColor" Value="{DynamicResource DataBackgroundColor}" />
+    </Style>
+    <Style x:Key="TopTabViewFrameStyle" TargetType="Frame">
+        <Setter Property="HeightRequest">
+            <OnPlatform x:TypeArguments="x:Double">
+                <On Platform="iOS">62</On>
+                <On Platform="Android">62</On>
+            </OnPlatform>
+        </Setter>
+    </Style>
+    <Style x:Key="TopTabViewContentTemplateStyle" TargetType="ContentView">
+        <Setter Property="Margin" Value="0" />
+    </Style>
+    <Style x:Key="SetRangeDatePickerStyle" TargetType="DatePicker">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="UbuntuRegular" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="{DynamicResource DefaultTextColor}" />
+    </Style>
+</ResourceDictionary>

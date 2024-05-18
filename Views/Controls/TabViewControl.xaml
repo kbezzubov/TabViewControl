@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="TabViewControl.Views.Controls.TabViewControl"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:TabViewControl.Views.Controls"
+    xmlns:converters="clr-namespace:TabViewControl.Views.Converters">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <converters:TopTabSelectedToColorConverter x:Key="topTabSelectedToColorConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid
+        HorizontalOptions="Fill"
+        RowDefinitions="auto,*"
+        VerticalOptions="Fill">
+        <ScrollView
+            x:Name="scrView"
+            Grid.Row="0"
+            HeightRequest="{Binding TabStripHeight, Source={RelativeSource AncestorType={x:Type controls:TabViewControl}}}"
+            HorizontalScrollBarVisibility="Never"
+            Orientation="Horizontal"
+            VerticalOptions="Start"
+            VerticalScrollBarVisibility="Never">
+            <Border
+                Margin="16,0,16,0"
+                Padding="0"
+                BackgroundColor="{Binding TabStripBackgroundColor}"
+                HeightRequest="38">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="19" />
+                </Border.StrokeShape>
+                <HorizontalStackLayout
+                    BackgroundColor="{Binding TabStripBackgroundColor, Source={RelativeSource AncestorType={x:Type controls:TabViewControl}}}"
+                    BindableLayout.ItemsSource="{Binding TabItems, Source={RelativeSource AncestorType={x:Type controls:TabViewControl}}}"
+                    Spacing="0"
+                    VerticalOptions="Fill">
+                    <BindableLayout.EmptyView>
+                        <Label Text="No tabs" />
+                    </BindableLayout.EmptyView>
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="controls:TabViewControlItem">
+                            <controls:TopTabItemControl
+                                Padding="0"
+                                CommandParameter="{Binding .}"
+                                HeightRequest="38"
+                                IsFirst="{Binding IsFirst}"
+                                IsLast="{Binding IsLast}"
+                                IsSelected="{Binding IsSelected}"
+                                Style="{StaticResource TopTabBaseFrameStyle}"
+                                TapCommand="{Binding TabTapCommand, Source={RelativeSource AncestorType={x:Type controls:TabViewControl}}}">
+                                <Label
+                                    Style="{StaticResource TopTabBaseLabelStyle}"
+                                    Text="{Binding TabTitle}"
+                                    TextColor="{Binding IsSelected, Converter={StaticResource topTabSelectedToColorConverter}, ConverterParameter='label'}" />
+                            </controls:TopTabItemControl>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </HorizontalStackLayout>
+            </Border>
+        </ScrollView>
+        <CarouselView
+            x:Name="contentView"
+            Grid.Row="1"
+            IsSwipeEnabled="False"
+            ItemsSource="{Binding TabItems, Source={RelativeSource AncestorType={x:Type controls:TabViewControl}}}"
+            Loop="False">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="controls:TabViewControlItem">
+                    <ContentView Content="{Binding Content}" x:Name="TabbedViewItem" />
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+            <CarouselView.EmptyView>
+                <Label Text="No Tabs content" />
+            </CarouselView.EmptyView>
+        </CarouselView>
+    </Grid>
+</ContentView>
