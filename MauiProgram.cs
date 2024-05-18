@@ -27,7 +27,7 @@ namespace TabViewControl
 #if __ANDROID__
             builder.ConfigureMauiHandlers(handlers =>
              {
-                 handlers.AddHandler(typeof(ContentView), typeof(CustomContentViewHandler));
+                 //handlers.AddHandler(typeof(ContentView), typeof(CustomContentViewHandler));
              });
 #endif
 #if DEBUG
